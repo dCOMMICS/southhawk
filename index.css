@@ -30,7 +30,7 @@ h1{
     filter: saturate(110%);
     top: 1%;
 }
-  .animate{
+  /* .animate{
     animation-duration: 1s;
     text-transform: uppercase;
     background-size: auto auto;
@@ -54,4 +54,4 @@ h1{
    .animate{
       font-size: 100px;
     }
-  }
+  } */
