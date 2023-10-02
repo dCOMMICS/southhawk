@@ -1,5 +1,11 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    position: relative;
+    letter-spacing: 0.04em;
 
 body{
     height: 100vh;
@@ -28,5 +34,5 @@ h1{
     background-color:none !important;
     filter: saturate(110%);
     top: 1%;
-
 }
+  }
