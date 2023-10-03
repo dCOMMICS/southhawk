@@ -253,3 +253,12 @@ mix-blend-mode: multiply;
   .container .box:hover .content p {
     transform: translateY(0px);
   }
+
+  gsap.to(element, {
+    duration: 2, 
+    scale: 1.5, 
+    rotationY: 45, 
+    x: 10, 
+    y: 0, 
+    z: -200
+});
