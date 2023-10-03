@@ -1,0 +1,255 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+  
+
+body{
+    height: 100vh;
+	width: 100vw;
+    font-family: 'Young Serif', serif;
+	/* background: radial-gradient(at 18% 99%, rgb(223, 229, 113) 0px, transparent 50%) repeat scroll 0% 0%, 
+                radial-gradient(at 97% 8%, rgb(118, 249, 173) 0px, transparent 50%) repeat scroll 0% 0%, 
+                radial-gradient(at 79% 82%, rgb(233, 109, 131) 0px, transparent 50%) repeat scroll 0% 0%,
+                radial-gradient(at 96% 10%, rgb(222, 81, 251) 0px, transparent 50%) repeat scroll 0% 0%,    
+                radial-gradient(at 42% 20%, rgb(116, 240, 251) 0px, transparent 50%) repeat scroll 0% 0%,
+                radial-gradient(at 4% 49%, rgb(203, 88, 218) 0px, transparent 50%) repeat scroll 0% 0%, rgba(0, 0, 0, 0) radial-gradient(at 57% 33%, rgb(218, 83, 228) 0px, #a299ff 50%) repeat scroll 0% 0%; */
+}
+.header{
+    font: bolder;
+    font-family: 'Young Serif', serif;
+}
+
+@media screen and (max-width: 800px) {
+    .left, .main, .right {
+      width: 100%;
+    }
+}
+
+h1{
+
+    background-color:none !important;
+    filter: saturate(110%);
+    top: 1%;
+}
+  /* .animate{
+    animation-duration: 1s;
+    text-transform: uppercase;
+    background-size: auto auto;
+  
+    background-size: 200% auto;
+    color: #fff;
+    
+   
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+        font-size: 190px;
+  }
+  
+  @keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+  }
+  @media screen and (max-width: 800px) {
+   .animate{
+      font-size: 100px;
+    }
+  } */
+
+  .pics
+  {
+     text-transform: uppercase;
+    background-image: linear-gradient(
+      -225deg,
+      #231557 0%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%
+    );
+    background-size: auto auto;
+    
+    background-size: 200% auto;
+    color: #fff;
+    
+   
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+        font-size: 190px;
+  }
+  
+  @keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+  } 
+
+  h1::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+  h1:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  h1::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: hsl(200 100% 80%);
+    z-index: -1;
+    transition: transform .3s ease;
+  }
+  
+  h1 {
+    position: relative;
+    font-size: 5rem;
+  }
+  
+  html {
+    block-size: 100%;
+    inline-size: 100%;
+  }
+  
+
+  .pics {
+    width: 100%; height: 100%;
+
+    @for $i from 0 to 10 {
+        &:nth-child(10n + #{$i + 1}):hover ~ .scene {
+            --rotateSceneY: #{-63 + ($i * 14)}deg;
+        }
+        &:nth-child(n + #{10 * $i + 1}):nth-child(-n + #{10 * ($i + 1)}):hover ~ .scene {
+            --rotateSceneX: #{36 - ($i * 8)}deg;
+        }
+    }
+}
+
+.pics{
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(180deg,#f00,#000);
+z-index: 1;
+opacity: 0;
+transition: 0.5s;
+mix-blend-mode: multiply;
+
+}
+
+/* coded by ibrahim kayode */
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .container {
+    position: relative;
+    width: 1160px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    margin: auto;
+  }
+  .container .box {
+    position: relative;
+    width: 275px;
+    height: 275px;
+    background: #000;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    margin-right: 15px;
+    margin-top: 45px;
+  }
+  .container:hover .box {
+    transform: rotateY(25deg);
+  }
+  .container .box:hover ~ .box {
+    transform: rotateY(-25deg);
+  }
+  .container .box:hover {
+    transform: rotateY(0deg) scale(1.25);
+    z-index: 1;
+    box-shadow: 0 25px 40px rgba(0,0,0,0.5);
+  }
+  .container .box .imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .container .box .imgBx:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,#f00,#000);
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
+    mix-blend-mode: multiply;
+  }
+  .container .box:hover .imgBx:before {
+    opacity: 1;
+  }
+  .container .box .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .container .box .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    padding: 20px;
+    align-items: flex-end;
+    box-sizing: border-box;
+  }
+  .container .box .content h2 {
+    color: #fff;
+    transition: 0.5s;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 20px;
+    transform: translateY(200px);
+    transition-delay: 0.3s;
+  }
+  .container .box:hover .content h2 {
+    transform: translateY(0px);
+  }
+  .container .box .content p {
+    color: #fff;
+    transition: 0.5s;
+    font-size: 14px;
+    transform: translateY(200px);
+    transition-delay: 0.4s;
+  }
+  .container .box:hover .content p {
+    transform: translateY(0px);
+  }
